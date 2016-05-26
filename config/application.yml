@@ -1,0 +1,10 @@
+APP:SECRET: "yq1y4lyso036ex3"
+
+ACCESS_TOKEN_SECRET: "44twa6rvaaxozmj"
+
+# database base login details
+USERNAME: "revjatto"
+PASSWORD: "u24tuc9r"
+
+STRIPE_API_KEY: "sk_test_qbT64pBC2kthd3B58M5jK2WW"
+STRIPE_PUBLIC_KEY: "pk_test_B9wM58rJ7gmKvkj1ncEFALE2"

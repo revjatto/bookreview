@@ -1,0 +1,27 @@
+<%= image_tag @book.book_img.url(:book_show), class: "book-show" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= @book.category.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @book.descriptions %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<%= link_to 'Back', books_path %> |
+<% if user_signed_in? %>
+<% if @book.user_id == current_user.id %>
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+<% end %>
+<% end %>

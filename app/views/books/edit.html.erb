@@ -1,0 +1,45 @@
+<h1>Editing Book</h1>
+
+<%= simple_form_for(@book, :html => { :multipart => true, class: 'form-horizontal' }) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+<div class="container">
+  <div>
+    <%= f.select :category_id, @categories %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :book_img %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :descriptions %><br>
+    <%= f.text_area :descriptions, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :author %><br>
+    <%= f.text_field :author, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.submit  class: "btn btn-danger" %>
+  </div>
+<% end %>
+</div>
+
+<%= link_to 'Show', @book %> |
+<%= link_to 'Back', books_path %>
