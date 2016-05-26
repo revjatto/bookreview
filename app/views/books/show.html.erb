@@ -1,5 +1,11 @@
-<%= image_tag @book.book_img.url(:book_show), class: "book-show" %>
+<div class="row">
 
+	<div class="col-md-4">
+
+<%= image_tag @book.book_img.url(:book_show), class: "book-show" %>
+</div>
+
+<div class="col-md-8">
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
@@ -17,7 +23,14 @@
   <strong>Author:</strong>
   <%= @book.author %>
 </p>
+</div>
+</div>
 
+<div class="row">
+<div class="col-md-4">
+</div>
+</div>
+<br/>
 <%= link_to 'Back', books_path %> |
 <% if user_signed_in? %>
 <% if @book.user_id == current_user.id %>
